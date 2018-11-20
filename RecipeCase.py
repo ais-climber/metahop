@@ -4,11 +4,15 @@ from pyhop import *
 #       Similarly, 'states' must consist of strings indexing states!
 
 class RecipeCase():
-    def __init__(self, name, states, initial_state_name,
-            goal_state_name, actions):
+    
+	#################################################################
+	# The usual initializer.
+	###
+    def __init__(self, name, states, initial_state,
+            goal_state, actions):
         self.name = name
-        self.initial_state_name = initial_state
-        self.goal_state_name = goal_state
+        self.initial_state = initial_state
+        self.goal_state = goal_state
 
         # The plan is a list of actions.  The plan may be empty,
         # incomplete, or incorrect.
