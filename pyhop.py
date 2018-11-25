@@ -111,6 +111,73 @@ class Goal():
     def __init__(self,name):
         self.__name__ = name
 
+#####################################################################
+# The following code (from #begin to #end) has been added by
+# Caleb Kisby
+#   for use with the metahop CBR system.
+
+#begin
+
+#################################################################
+# Function to determine the distance from one PyHop state to another
+# i.e. the difference between the variables
+# of the two states.
+# 
+# IMPORTANT NOTE: We assume that the two states only consist of 
+#   either *iterable* variables (e.g. 'lists', 'tuples'), or 
+#   variables with subtractable values.  This way,
+#   we can determine the difference between states as either
+#   the difference between variables, or the difference between
+#   variables' entries.
+###
+"""
+def stateDifference(state1, state2):
+    varNamesInit = self.variableNames(state1)
+    varNamesGoal = self.variableNames(state2)
+
+    # We perform a strict sanity check: Make sure that the two 
+    # states have exactly the same names for variables.
+    if (len(varNamesInit) != len(varNamesGoal)):
+        print("distanceToGoal: INITIAL STATE AND FINAL STATE HAVE DIFFERENT NUMBER OF VARIABLES")
+        return -1
+        
+    for i in range(varNamesInit):
+        if (varNamesInit[i] != varNamesGoal[i]):
+            print("distanceToGoal: INITIAL STATE AND FINAL STATE HAVE DIFFERENT VARIABLE NAMES")
+            return -1
+
+    # We then sum the total difference between all the variable values.
+    initValues = [getattr(state1, attr) for attr in varNamesInit]
+    goalValues = [getattr(state2, attr) for attr in varNamesGoal]
+
+    totalDifference = 0
+
+    for i in range(initValues):
+
+        # If the value is iterable, we iterate and sum the 
+        # difference between each entry.
+        if isinstance(initValues[i], collections.Iterable):
+            for j in range(initValues[i]):
+                totalDifference += abs(goalvalues[i][j] - initValues[i][j])
+            
+        # Otherwise, we just take the difference between the values.
+        else:
+            totalDifference += abs(goalValues[i] - initValues[i])
+
+    return totalDifference
+"""
+#################################################################
+# Helper function to produce a 'list' of an instance's variable
+# names.
+###
+def variableNames(instance):
+    return [attr for attr in dir(recipe1)
+        if not callable(getattr(recipe1, attr))
+        and not attr.startswith("__")]
+
+
+#end
+#####################################################################
 
 ### print_state and print_goal are identical except for the name
 

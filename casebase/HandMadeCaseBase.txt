@@ -1,0 +1,170 @@
+# 
+# 
+# 
+# 
+# RECIPE FOR RECIPES
+#RECIPEi
+#NAME
+#    __
+#INGREDIENTS
+#    __
+#    __
+#    __
+#STEPS
+#    __
+#    __
+#    __
+#RESULT
+#    # The stack is ordered top-to-bottom
+#    STACK
+#        __
+#        __
+#        __
+#    SPREAD2
+#        __
+#    SPREAD1
+#        __
+#    HOT
+#        __
+#        __
+#    MELTED
+#        __
+#        __
+#    TOASTED
+#        __
+#        __
+#    FRIED
+#        __
+#        __
+#    SLICED
+#        __
+#        __
+#
+#By convention, if a 'list' '[]' or 'set' field is not given,
+#then we assume that it is empty.
+#
+#By convention, if a 'dict' '{}' field is not given,
+#then we assume that the keys are our ingredients and
+#that the corresponding values are 'False'.
+#(and that t)
+#
+#####################################################################
+# Peanut Butter and Jelly
+RECIPE BEGIN
+NAME
+    peanut butter and jelly
+INGREDIENTS
+    white bread 1
+    white bread 2
+    peanut butter
+    grape jelly
+STEPS
+    spread(peanut butter, white bread 1)
+    stack(white bread 1)
+    spread(grape jelly, white bread 2)
+    stack(white bread 2)
+RESULT
+    # The stack is ordered top-to-bottom
+    STACK
+        white bread 2
+        white bread 1
+    SPREAD2
+        grape jelly
+    SPREAD1
+        peanut butter
+    HOT
+    MELTED
+    TOASTED
+    FRIED
+    SLICED
+END       
+#####################################################################
+RECIPE BEGIN
+NAME
+    grilled cheese
+INGREDIENTS
+    white bread 1
+    white bread 2
+    cheddar cheese
+    butter
+STEPS
+    spread(butter, white bread 1)
+    spread(butter, white bread 2)
+    stack(white bread 1)
+    stack(cheddar cheese)
+    stack(white bread 2)
+    toast_stack()
+RESULT
+    # The stack is ordered top-to-bottom
+    STACK
+        white bread 2
+        cheddar cheese
+        white bread 1
+    SPREAD2
+        butter
+    SPREAD1
+        butter
+    HOT
+        white bread 1
+        white bread 2
+        cheddar cheese
+        butter
+    MELTED
+        cheddar cheese
+        butter
+    TOASTED
+        white bread 1
+        white bread 2
+    FRIED
+    SLICED
+END
+#####################################################################
+GOAL BEGIN
+NAME
+    fruit and cheese on toast
+INGREDIENTS
+    white bread
+    cheddar cheese
+    grape jelly
+STEPS
+RESULT
+    # The stack is ordered top-to-bottom
+    STACK
+        cheddar cheese
+        grape jelly
+    SPREAD2
+    SPREAD1
+        grape jelly
+    HOT
+        white bread
+        cheddar cheese
+    MELTED
+        cheddar cheese
+    TOASTED
+        white bread
+    FRIED
+    SLICED
+END
+#####################################################################
+GOAL BEGIN
+NAME
+    peanut butter and banana sandwich
+INGREDIENTS
+    white bread
+    peanut butter
+    banana
+STEPS
+RESULT
+    # The stack is ordered top-to-bottom
+    STACK
+        banana
+        white bread
+    SPREAD2
+    SPREAD1
+        peanut butter
+    HOT
+    MELTED
+    TOASTED
+    FRIED
+    SLICED
+END
