@@ -123,7 +123,7 @@ GOAL BEGIN
 NAME
     fruit and cheese on toast
 INGREDIENTS
-    white bread
+    white bread 1
     cheddar cheese
     grape jelly
 STEPS
@@ -132,16 +132,17 @@ RESULT
     STACK
         cheddar cheese
         grape jelly
+        white bread 1
     SPREAD2
     SPREAD1
         grape jelly
     HOT
-        white bread
+        white bread 1
         cheddar cheese
     MELTED
         cheddar cheese
     TOASTED
-        white bread
+        white bread 1
     FRIED
     SLICED
 END
@@ -150,18 +151,45 @@ GOAL BEGIN
 NAME
     peanut butter and banana sandwich
 INGREDIENTS
-    white bread
+    white bread 1
+    white bread 2
     peanut butter
     banana
 STEPS
 RESULT
     # The stack is ordered top-to-bottom
     STACK
+        white bread 2
         banana
-        white bread
+        white bread 1
     SPREAD2
     SPREAD1
         peanut butter
+    HOT
+    MELTED
+    TOASTED
+    FRIED
+    SLICED
+END
+#####################################################################
+GOAL BEGIN
+NAME
+    banana and honey sandwich
+INGREDIENTS
+    white bread 1
+    white bread 2
+    banana
+    honey
+STEPS
+RESULT
+    # The stack is ordered top-to-bottom
+    STACK
+        white bread 2
+        banana
+        white bread 1
+    SPREAD2
+        honey
+    SPREAD1
     HOT
     MELTED
     TOASTED

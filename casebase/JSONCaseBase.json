@@ -1,0 +1,225 @@
+[ {
+    "name" : "SAMPLE",
+    "type" : "dummy",
+    "ingredients" : [
+        ""
+    ],
+    "steps" : [
+        ""
+    ],
+    "result" : {
+        "unused" : [],
+        "stack" : [
+
+        ],
+        "spread2" : "",
+        "spread1" : "",
+        "hot" : [],
+        "melted" : [],
+        "toasted" : [],
+        "fried" : []
+    }
+},
+
+{
+    "name" : "peanut butter and jelly",
+    "type" : "case",
+    "ingredients" : [
+        "white bread",
+        "white bread",
+        "peanut butter",
+        "grape jelly"
+    ],
+    "steps" : [
+        "spread(peanut butter, white bread)",
+        "stack(white bread)",
+        "spread(grape jelly, white bread)",
+        "stack(white bread)"
+    ],
+    "result" : {
+        "unused" : [],
+        "stack" : [
+            "white bread",
+            "white bread"
+        ],
+        "spread2" : "grape jelly",
+        "spread1" : "peanut butter",
+        "hot" : [],
+        "melted" : [],
+        "toasted" : [],
+        "fried" : []
+    }
+},
+
+{
+    "name" : "grilled cheese",
+    "type" : "case",
+    "ingredients" : [
+        "white bread",
+        "white bread",
+        "cheddar cheese",
+        "butter"
+    ],
+    "steps" : [
+        "spread(butter, white bread)",
+        "spread(butter, white bread)",
+        "stack(white bread)",
+        "stack(cheddar cheese)",
+        "stack(white bread)",
+        "toast_stack()"
+    ],
+    "result" : {
+        "unused" : [],
+        "stack" : [
+            "white bread",
+            "cheddar cheese",
+            "white bread"
+        ],
+        "spread2" : "butter",
+        "spread1" : "butter",
+        "hot" : [
+            "white bread",
+            "cheddar cheese",
+            "butter"
+        ],
+        "melted" : [
+            "cheddar cheese",
+            "butter"
+        ],
+        "toasted" : [
+            "white bread"
+        ],
+        "fried" : []
+    }
+},
+
+{
+    "name" : "peanut butter and banana",
+    "type" : "case",
+    "ingredients" : [
+        "white bread",
+        "white bread",
+        "peanut butter",
+        "banana"
+    ],
+    "steps" : [
+        "spread(peanut butter, white bread)",
+        "stack(white bread)",
+        "stack(banana)",
+        "spread(peanut butter, white bread)",
+        "stack(white bread)"
+    ],
+    "result" : {
+        "unused" : [],
+        "stack" : [
+            "white bread",
+            "banana",
+            "white bread"
+        ],
+        "spread2" : "peanut butter",
+        "spread1" : "peanut butter",
+        "hot" : [],
+        "melted" : [],
+        "toasted" : [],
+        "fried" : []
+    }
+},
+
+{
+    "name" : "peanut butter and honey",
+    "type" : "goal",
+    "ingredients" : [
+        "white bread",
+        "peanut butter",
+        "honey"
+    ],
+    "steps" : [
+
+    ],
+    "result" : {
+        "unused" : [],
+        "stack" : [
+            "white bread",
+            "white bread"
+        ],
+        "spread2" : "honey",
+        "spread1" : "peanut butter",
+        "hot" : [],
+        "melted" : [],
+        "toasted" : [],
+        "fried" : []
+    }
+},
+
+{
+    "name" : "pimento grilled cheese",
+    "type" : "goal",
+    "ingredients" : [
+        "white bread",
+        "pimento cheese",
+        "butter",
+        "tomato"
+    ],
+    "steps" : [
+        
+    ],
+    "result" : {
+        "unused" : [],
+        "stack" : [
+            "white bread",
+            "tomato",
+            "pimento cheese",
+            "white bread"
+        ],
+        "spread2" : "butter",
+        "spread1" : "butter",
+        "hot" : [
+            "white bread",
+            "pimento cheese",
+            "butter", 
+            "tomato"
+        ],
+        "melted" : [
+            "pimento cheese",
+            "butter"
+        ],
+        "toasted" : [
+            "white bread"
+        ],
+        "fried" : []
+    }
+},
+
+{
+    "name" : "fruit and cheese on toast",
+    "type" : "goal",
+    "ingredients" : [
+        "white bread",
+        "cheddar cheese",
+        "grape jelly"
+    ],
+    "steps" : [
+
+    ],
+    "result" : {
+        "unused" : [],
+        "stack" : [
+            "cheddar cheese",
+            "white bread"
+        ],
+        "spread1" : "grape jelly",
+        "spread2" : "",
+        "hot" : [
+            "white bread", 
+            "cheddar cheese", 
+            "grape jelly"
+        ],
+        "melted" : ["cheddar cheese", "grape jelly"],
+        "toasted" : ["white bread"],
+        "fried" : []
+    }
+}
+
+
+
+]
