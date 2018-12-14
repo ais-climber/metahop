@@ -126,6 +126,40 @@
 },
 
 {
+    "name" : "tomato and spinach",
+    "type" : "case",
+    "ingredients" : [
+        "white bread",
+        "mayonnaise",
+        "tomato",
+        "spinach"
+    ],
+    "steps" : [
+        "stack(white bread)",
+        "stack(tomato)",
+        "stack(spinach)",
+        "spread(mayonnaise, white bread)",
+        "stack(white bread)"
+    ],
+    "result" : {
+        "unused" : [],
+        "stack" : [
+            "white bread",
+            "spinach",
+            "tomato",
+            "white bread"
+
+        ],
+        "spread2" : "mayonnaise",
+        "spread1" : "",
+        "hot" : [],
+        "melted" : [],
+        "toasted" : [],
+        "fried" : []
+    }
+},
+
+{
     "name" : "peanut butter and honey",
     "type" : "goal",
     "ingredients" : [
@@ -218,8 +252,35 @@
         "toasted" : ["white bread"],
         "fried" : []
     }
-}
+},
 
+
+
+{
+    "name" : "peanut butter and honey",
+    "type" : "goal",
+    "ingredients" : [
+        "white bread",
+        "peanut butter",
+        "honey"
+    ],
+    "steps" : [
+
+    ],
+    "result" : {
+        "unused" : [],
+        "stack" : [
+            "white bread",
+            "white bread"
+        ],
+        "spread2" : "honey",
+        "spread1" : "peanut butter",
+        "hot" : [],
+        "melted" : [],
+        "toasted" : [],
+        "fried" : []
+    }
+}
 
 
 ]

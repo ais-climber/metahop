@@ -26,6 +26,7 @@ def main():
 		print("Goal: " + goal.name)
 
 		closest = cbr.casebase.getSimilarRecipe(goal)
+		# cbr.storeRecipe(closest) ## TODO: Storing recipes does not work currently!
 		print("Closest: " + closest.name)
 
 		print("")

@@ -1,19 +1,13 @@
 from pyhop import *
-from RecipeCase import *
+from metacase import *
 
-class Recipebase():
+class AdaptationBase():
 
 	#################################################################
 	# The usual initializer.
 	###
-	def __init__(self, recipeCaseList):
-		self.base = [recipe for recipe in recipeCaseList]
-
-	#################################################################
-	# Function to add a new recipe to the recipe base.
-	###
-	def addRecipe(self, someRecipe):
-		self.base.append(someRecipe)
+	def __init__(self, metaCaseList):
+		self.adaptationBase = [adaptation for adaptation in metaCaseList]
 
 	#################################################################
 	# Function to return the recipe most similar to 'someRecipe'
@@ -98,3 +92,4 @@ class Recipebase():
 
 
 	
+

@@ -29,6 +29,15 @@ class CBR():
 		return self.casebase.getSimilarRecipe(emptyRecipeCase)
 
 	#################################################################
+	# Function to store a recipe in the case base.
+	# 
+	# This function takes in a *complete* RecipeCase and stores it
+	# in the case base.
+	###
+	def storeRecipe(self, completeRecipeCase):
+		self.casebase.addRecipe(completeRecipeCase)
+
+	#################################################################
 	# The usual toString.
 	###
 	def __str__(self):
