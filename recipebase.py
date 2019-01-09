@@ -38,13 +38,16 @@ class Recipebase():
 	# 
 	# For now, we do the naiive thing:  Take the difference between
 	# the two recipes' initial states.  Then take the difference between
-	# their final states.  Then sum this total difference.
+	# their final states.  Next take the difference between their plans.
+	# Finally, sum this total difference.
 	###
 	def difference(self, recipe1, recipe2):
 		diffInit = self.stateDifference(recipe1.initial_state, recipe2.initial_state)
 		diffGoal = self.stateDifference(recipe1.goal_state, recipe2.goal_state)
 
-		return diffInit + diffGoal
+		diffPlan = self.planDifference(recipe1.plan, recipe2.plan)
+
+		return diffInit + diffGoal + diffPlan
 
 	#################################################################
 	# Function to determine the difference between two states,
@@ -80,6 +83,51 @@ class Recipebase():
 				# Otherwise, we just take the difference between the values.
 				else:
 					totalDifference += abs(val2 - val1)
+
+		return totalDifference
+
+	#################################################################
+	# Function to determine the difference between two plans,
+	# each given as a 'list' of tuples (function, params),
+	# where:
+	# 	'function' is the function to be executed
+	#	'params' is the 'list' of 'string' parameters to be fed into
+	# 		the function.
+	# 
+	# We will not focus on the difference between the 'params', since
+	# this is largely determined by the difference in ingredients (which
+	# is handled by the 'stateDifference' method).
+	# 
+	# Instead, we *just* focus on the 'function's being used in each
+	# plan, and their comparative frequency.  To this end, we make
+	# dictionaries {function : frequency} that count the number of
+	# occurances of 'function' in each plan.
+	# 
+	###
+	def planDifference(self, plan1, plan2):
+		totalDifference = 0
+		freqDict1 = {}
+		freqDict2 = {}
+
+		allFunctionNames = [plan1[i][0].__name__ for i in range(0, len(plan1))] + [plan2[i][0] for i in range(0, len(plan2))]
+		freqDict1 = {f : 0 for f in allFunctionNames}
+		freqDict2 = {f : 0 for f in allFunctionNames}
+
+		# Populate the frequency dictionaries.
+		for f in allFunctionNames:
+			# Count the number of occurences of 'f' in 'plan1'
+			for pair in plan1:
+				if pair[0].__name__ == f:
+					freqDict1[f] += 1
+
+			# Count the number of occurences of 'f' in 'plan2'
+			for pair in plan2:
+				if pair[0].__name__ == f:
+					freqDict2[f] += 1
+
+		# Now we get the difference between the frequency dictionaries.
+		for f in allFunctionNames:
+			totalDifference = abs(freqDict1[f] - freqDict2[f])
 
 		return totalDifference
 

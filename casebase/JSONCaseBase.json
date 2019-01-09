@@ -256,36 +256,8 @@
         "toasted" : ["white bread"],
         "fried" : []
     }
-},
-
-
-
-{
-    "name" : "peanut butter and honey",
-    "type" : "goal",
-    "ingredients" : [
-        "white bread",
-        "white bread",
-        "peanut butter",
-        "honey"
-    ],
-    "steps" : [
-
-    ],
-    "result" : {
-        "unused" : [],
-        "stack" : [
-            "white bread",
-            "white bread"
-        ],
-        "spread2" : "honey",
-        "spread1" : "peanut butter",
-        "hot" : [],
-        "melted" : [],
-        "toasted" : [],
-        "fried" : []
-    }
 }
+
 
 
 ]
