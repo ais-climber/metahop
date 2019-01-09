@@ -1,5 +1,7 @@
 from RecipeCase import *
+from actions import *
 import json
+import re
 
 #####################################################################
 # Function to parse a step of the recipe in the file into a
@@ -44,9 +46,29 @@ def parseJSONFile(filename):
 			initialState = parsed_json[0]["result"]
 			initialState["unused"] = recipedict["ingredients"]
 
+			initialState["hot"] = set(initialState["hot"])
+			initialState["melted"] = set(initialState["melted"])
+			initialState["toasted"] = set(initialState["toasted"])
+			initialState["fried"] = set(initialState["fried"])
+
 			goalState = recipedict["result"]
 
-			plan = recipedict["steps"]
+			goalState["hot"] = set(goalState["hot"])
+			goalState["melted"] = set(goalState["melted"])
+			goalState["toasted"] = set(goalState["toasted"])
+			goalState["fried"] = set(goalState["fried"])
+
+			plan = []
+
+			for action in recipedict["steps"]:
+				function = eval(action.split("(")[0])
+				params = action.split("(")[1].rstrip(")").split(", ")
+
+				# The hardcoded string 'state' is ALWAYS the first parameter
+				# of any recipe action.  So we prepend it to the params.
+				params = ["state"] + params
+
+				plan.append((function, params))
 
 			thisRecipe = RecipeCase(recipeName, initialState, goalState, plan)
 

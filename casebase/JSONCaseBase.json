@@ -31,9 +31,9 @@
         "grape jelly"
     ],
     "steps" : [
-        "spread(peanut butter, white bread)",
+        "spread(peanut butter, 1)",
         "stack(white bread)",
-        "spread(grape jelly, white bread)",
+        "spread(grape jelly, 2)",
         "stack(white bread)"
     ],
     "result" : {
@@ -61,8 +61,8 @@
         "butter"
     ],
     "steps" : [
-        "spread(butter, white bread)",
-        "spread(butter, white bread)",
+        "spread(butter, 1)",
+        "spread(butter, 2)",
         "stack(white bread)",
         "stack(cheddar cheese)",
         "stack(white bread)",
@@ -103,10 +103,10 @@
         "banana"
     ],
     "steps" : [
-        "spread(peanut butter, white bread)",
+        "spread(peanut butter, 1)",
         "stack(white bread)",
         "stack(banana)",
-        "spread(peanut butter, white bread)",
+        "spread(peanut butter, 2)",
         "stack(white bread)"
     ],
     "result" : {
@@ -130,6 +130,7 @@
     "type" : "case",
     "ingredients" : [
         "white bread",
+        "white bread",
         "mayonnaise",
         "tomato",
         "spinach"
@@ -138,7 +139,7 @@
         "stack(white bread)",
         "stack(tomato)",
         "stack(spinach)",
-        "spread(mayonnaise, white bread)",
+        "spread(mayonnaise, 2)",
         "stack(white bread)"
     ],
     "result" : {
@@ -163,6 +164,7 @@
     "name" : "peanut butter and honey",
     "type" : "goal",
     "ingredients" : [
+        "white bread",
         "white bread",
         "peanut butter",
         "honey"
@@ -189,6 +191,7 @@
     "name" : "pimento grilled cheese",
     "type" : "goal",
     "ingredients" : [
+        "white bread",
         "white bread",
         "pimento cheese",
         "butter",
@@ -229,6 +232,7 @@
     "type" : "goal",
     "ingredients" : [
         "white bread",
+        "white bread",
         "cheddar cheese",
         "grape jelly"
     ],
@@ -260,6 +264,7 @@
     "name" : "peanut butter and honey",
     "type" : "goal",
     "ingredients" : [
+        "white bread",
         "white bread",
         "peanut butter",
         "honey"

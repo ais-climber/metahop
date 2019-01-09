@@ -38,9 +38,9 @@ class RecipeCase():
 		string += "Initial State: " + str(self.initial_state) + "\n\n"
 		string += "Final State: " + str(self.goal_state) + "\n\n"
 
-		string += "Plan: ["
-		for action in self.plan:
-			string += action + ", "
+		string += "Plan: [\n"
+		for (function, params) in self.plan:
+			string += function.__name__ + ", " + str(params) + "\n"
 		string += "]\n\n"
 
 		return string
