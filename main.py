@@ -9,13 +9,21 @@ def main():
 	recipeCaseList = []
 	recipeGoalList = []
 
-	# We read in past recipes and future recipe goals from
+	adaptationCaseList = []
+	adaptationGoalList = []
+
+	# We read in past recipes, adaptations and future recipe, adaptation *goals* from
 	# an input file.
-	(recipeCaseList, recipeGoalList) = parseJSONFile("casebase/JSONCaseBase.json")
+	(recipeCaseList, recipeGoalList) = parseJSONCaseBase("casebase/JSONCaseBase.json")
+	(adaptationCaseList, adaptationGoalList) = parseJSONAdaptationBase("casebase/JSONAdaptationBase.json")
 
 	# We initialize the CBR reasoner.
-	cbr = CBR(recipeCaseList)
+	cbr = CBR(recipeCaseList, adaptationCaseList) #TODOTODOTODO Give it an 'adaptationCase'!!!
 	#print(str(cbr)) # TEST
+
+	###########################################################################
+	# 							THE ACTUAL TESTS							  #
+	###########################################################################
 
 	# We output the case in the casebase that is most similar
 	# to each goal recipe.

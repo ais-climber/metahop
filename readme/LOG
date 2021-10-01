@@ -1,0 +1,41 @@
+2018
+
+12/5
+- Instead of using my own file format to store recipes, I am now using JSON.
+- Converted my recipe base to a JSON recipe base
+- Modified parse code to read off the JSON
+- Read a little bit of Russel and Norvig on classical planning.
+  While reading, I mostly gathered that I already have this understanding --
+  from papers that I have read on CBR in AI.  I didn't learn of any better
+  representation of a plan than a list of actions.
+
+12/6
+- Mood: Just Do Something.  I am picking a representation for plans, since
+  it doesn't matter too much right now what it is (so long as it can be
+  used for case adaptation).  So here is our official plan representation:
+
+  The world is described by its *state*, which is just a setting of variables
+  to values.
+
+  We can perform an *action* a: S1 -> P -> S2 from state to state, where
+  	S1 is the *input state*, whose variables satisfy certain *preconditions*
+  	P are the *parameters*
+  	S2 is the *result state*, and reflects the *effects* of 'a'.
+
+  A *plan* is simply an array of actions: [a1, a2, a3, ..., an], where all
+  of the preconditions of the actions are satisfied, a1 is applied to the
+  *initial state*, and the actions in sequence result in the *final state*.
+
+- Wrote down the representation of case adaptation as a plan in more precise
+  detail.  Again.
+- Briefly looked through slides on classical planning to look for other
+  ways to represent a plan, just in case.  Pointless and uninteresting.
+- Re-read parts of http://www.cse.lehigh.edu/~munoz/Publications/ReviewAdapt.pdf.
+- Ok, finally realized:  Partial-Order planning and Hierarchical planning are
+  *much* better ways to represent plans for case adaptation (so that adaptation
+  doesn't involve gutter-level changes).  *FOR NOW*, I am going to use
+  Total-Order planning (i.e. a plan is just an array of actions).  I should
+  change this later to get more effective plans.
+- Read what was available on Google preview of "Inside Case-Based Reasoning."
+  Luckily, I found the call number for the book at the library.  Going to
+  borrow it tonight, along with something just for fun.

@@ -1,0 +1,24 @@
+[ {
+    "name" : "SAMPLE",
+    "type" : "case",
+    "initial recipe" : "",
+    "steps" : [
+        ""
+    ],
+    "goal recipe" : ""
+},
+
+{
+    "name" : "pbnj->pbnb",
+    "type" : "case",
+    "initial recipe" : "peanut butter and jelly",
+    "steps" : [
+        "apply_closest_and_substitute(grape jelly, banana, 0)",
+        "delete_step(2)",
+        "insert_step('stack(banana)', 2)",
+        "insert_step('spread(peanut butter, 2)', 3)"
+    ],
+    "goal recipe" : "peanut butter and banana"
+}
+
+]

@@ -30,7 +30,7 @@ def parseStepToCommand(step):
 #
 # File is given by its 'string' name, 'filename'.
 ###
-def parseJSONFile(filename):
+def parseJSONCaseBase(filename):
 	recipeCaseList = []
 	recipeGoalList = []
 
@@ -80,3 +80,6 @@ def parseJSONFile(filename):
 				recipeGoalList.append(thisRecipe)
 
 	return (recipeCaseList, recipeGoalList)
+
+def parseJSONAdaptationBase(filename):
+	pass

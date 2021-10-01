@@ -1,5 +1,5 @@
 from pyhop import *
-from metacase import *
+from adaptationcase import *
 import recipebase
 
 class AdaptationBase():

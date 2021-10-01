@@ -18,9 +18,6 @@ class AdaptationCase():
 	###
 	def __init__(self, name, initial_recipe,
 			goal_recipe, metaactions):
-		self.initial_recipe = RecipeCase()
-		self.goal_recipe = RecipeCase()
-
 		self.name = name
 		self.initial_recipe = initial_recipe
 		self.goal_recipe = goal_recipe

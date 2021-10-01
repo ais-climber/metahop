@@ -1,0 +1,82 @@
+
+---------------------------------------------------------------------
+  Timeline for Metahop Project
+---------------------------------------------------------------------
+
+---------------------------------------------------------------------
+CONCRETE BEGINNINGS
+---------------------------------------------------------------------
+Nov 29 - Dec 6
+[*] Come up with concrete bullet points describing program functionality
+[*] Along with these points, come up with concrete examples and situations
+  to expect for the program (key examples to talk through)
+[*] Write up these several key examples into hand-coded databases to be tested
+  by the program.
+[*] Decide on a couple of representations of plans to try
+
+---------------------------------------------------------------------
+REVISED TIMELINE:
+---------------------------------------------------------------------
+Dec 13 - Dec 20
+[] Write up the list of actions to perform on a recipe
+  (e.g. spread(x, y), stack(x), toast(x), ...)
+  w. appropriate preconditions on the state
+
+Dec 20 - Dec 27
+[] Write up a naiive adaptation-as-a-plan using the list
+  of actions defined above.
+
+Dec 27 - Jan 3
+[] Write up a list of meta-actions to perform on recipe-plans
+  (e.g. apply_plan(x), delete_step(x), switch_order(x, y)),
+  w. appropriate preconditions on the recipe
+
+Jan 3 - Jan 10
+[] Write the .json file that contains meta-plans (adaptations) on recipes.
+
+Jan 10 - Jan 17
+[] Write the naiive unstructured meta-adaptation.
+
+Jan 17 - Jan 24
+[] Debug!
+
+
+
+---------------------------------------------------------------------
+PRELIMINARY RESULTS:
+---------------------------------------------------------------------
+Dec 6 - Dec 13
+[N] Convert 'similarity comparison' into a basic 'indexing system'
+  [N] Unit test the 'indexing system'
+[3] Write naiive case adaptation in plan-format, using some representation of plan
+  [2] Unit test the naiive case adaptation
+
+Dec 13 - Dec 27
+[?] Implement the adaptation learner
+  [3] Implement the meta-indexing system
+  [2] Unit test the meta-indexing system
+  [5] Implement the meta-adaptation system (which should just be plan adaptation)
+  [2] Unit test the meta-adaptation system
+
+Dec 27 - Jan 3
++ Jan 3 - Jan 10
++ Jan 10 - Jan 17
+[10-30] Implement 4 standard recipe adaptation algorithms for comparison
+  [-] (2 meta-learned ones and 2 'base' standard ones)
+  [4-8] Write tests for these adaptations
+
+Jan 17 - Jan 24
+[4] Write up comparison tests for adaptation algorithms
+  [?] Run several tests on several inputs comparing my meta-learned adaptation against standards
+
+---------------------------------------------------------------------
+AFTER PRELIMINARY RESULTS:
+---------------------------------------------------------------------
+[?] Web mine larger recipe bases for better comparisons
+  [?] Unit testing for web mining
+[?] If system has very poor accuracy, re-do the plan representation and meta-system.
+  [?] Unit testing for the new system as well
+[?] Re-implement some sufficiently accurate "standard" indexing system
+  [?] Unit testing for this indexing system
+[?] Look towards making system less domain dependent, i.e. abstracting a lot out
+  [?] Abstract out the Unit tests as well
